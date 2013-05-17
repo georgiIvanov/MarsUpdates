@@ -1,0 +1,188 @@
+﻿<Page
+    x:Class="MarsUpdates.Pages.Feeds"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MarsUpdates.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="GridLayout" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="StatisticsBrowser" Grid.Column="0" Orientation="Vertical"
+                    Margin="50, 250" Style="{StaticResource ReportBrowserStyle}">
+            <TextBlock x:Name="DateRange" FontSize="30" Text="2012.12.01  -  2013.04.01" HorizontalAlignment="Center" Margin="30"/>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+                <StackPanel Orientation="Vertical" Margin="35, 0">
+                    <TextBlock Text="MaxTemp" FontSize="24" Margin="0,5"/>
+                    <TextBlock Text="MinTemp" FontSize="24" Margin="0,5"/>
+                    <TextBlock  Text="AvgTemp" FontSize="24" Margin="0,5"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="35, 0">
+                    <TextBlock x:Name="MaxTempC" Text="5.5C" FontSize="24" Margin="0,5"/>
+                    <TextBlock x:Name="MinTempC" Text="-20C" FontSize="24" Margin="0,5"/>
+                    <TextBlock x:Name="AvgTempC" Text="-15C" FontSize="24" Margin="0,5"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="35, 0">
+                    <TextBlock x:Name="MaxTempF" Text="35F" FontSize="24" Margin="0,5"/>
+                    <TextBlock x:Name="MinTempF" Text="-80F" FontSize="24" Margin="0,5"/>
+                    <TextBlock x:Name="AvgTempF" Text="-25F" FontSize="24" Margin="0,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30">
+                <StackPanel Orientation="Vertical" Margin="35, 0">
+                    <TextBlock Text="MaxPressure" FontSize="24" Margin="0,5"/>
+                    <TextBlock Text="MinPressure" FontSize="24" Margin="0,5"/>
+                    <TextBlock  Text="AvgPressure" FontSize="24" Margin="0,5"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="35, 0">
+                    <TextBlock x:Name="MaxPressureBlock" Text="9.149" FontSize="24" Margin="0,5"/>
+                    <TextBlock x:Name="MinPressureBlock" Text="7.24" FontSize="24" Margin="0,5"/>
+                    <TextBlock  x:Name="AvgPressureBlock" Text="8.5" FontSize="24" Margin="0,5"/>
+                </StackPanel>
+                
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel x:Name="ReportBrowser" Grid.Column="0" Orientation="Vertical"  Visibility="Collapsed"
+                    Margin="50, 100" Style="{StaticResource ReportBrowserStyle}">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,80">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Solar day:" FontSize="30"/>
+                    <TextBlock x:Name="SolarDayBlock"  FontSize="30" Margin="10, 0"/>
+                    <TextBlock x:Name="DateMeasuredBlock"  Margin="20,0" FontSize="30"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0, 30">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="MaxTempNumberC" FontSize="30" Margin="0,0,10,0" Grid.Row="0"/>
+                            <TextBlock x:Name="MinTempNumberC" FontSize="30" Margin="0,0,10,0" Grid.Row="1"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="150, 0,10,0">
+                            <Rectangle x:Name="MaxTempRectC" Height="20" Width="0" Fill="Red" HorizontalAlignment="Left"
+                                       Grid.Row="0" Margin="0,0,0,20"/>
+                            <Rectangle x:Name="MinTempRectC" Height="20" Width="0" Fill="Blue" HorizontalAlignment="Left"
+                                       Grid.Row="1"/>
+                        </StackPanel>
+                        
+                    </Grid>
+                    <Grid Margin="0, 40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="MaxTempNumberF" FontSize="30" Margin="0,0,10,0" Grid.Row="0"/>
+                            <TextBlock x:Name="MinTempNumberF" FontSize="30" Margin="0,0,10,0" Grid.Row="1"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="150, 0,10,0">
+                            <Rectangle x:Name="MaxTempRectF" Height="20" Width="0" Fill="Red" HorizontalAlignment="Left"
+                                       Grid.Row="0" Margin="0,0,0,20"/>
+                            <Rectangle x:Name="MinTempRectF" Height="20" Width="0" Fill="Blue" HorizontalAlignment="Left"
+                                       Grid.Row="1"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <Grid Margin="0, 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="hPaValue"  FontSize="30" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="150, 0,10,0" Orientation="Horizontal">
+                            <Polygon x:Name="hPaTriangle" Points="90,100, 90,100, 0,100" Stroke="Black" Fill="White"
+                                     Grid.Column="1"  Margin="-2,0"/>
+                            <Line Stroke="Black" Width="5" StrokeThickness="1" X1="2" X2="2" Y1="00" Y2="100" />
+                            
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="20,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Weather:" FontSize="24" Grid.Row="0"/>
+                                    <TextBlock x:Name="WeatherTextBlock" FontSize="24" Grid.Row="0" Margin="20,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Wind:" FontSize="24" Grid.Row="1"/>
+                                    <TextBlock x:Name="WindTextBlock" FontSize="24" />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel x:Name="TwitterBrowser" Grid.Column="0" Orientation="Vertical"
+                    Background="{StaticResource TwitterBrowserBackground}"
+                    Margin="20, 50">
+            <StackPanel x:Name="TweetTextStack" Orientation="Horizontal" Margin="30, 0">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/Assets/twitterLogoRes.png" Height="63" Width="63" Margin="0, 10"/>
+                    <WebView x:Name="AvatarWebView" Height="63" Width="63" GotFocus="WebView_GotFocus"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="20, 10">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock x:Name="TwitterName"  Style="{StaticResource TwitterBrowserText}"/>
+                        <TextBlock x:Name="TwitterDatePublished" Margin="30, 0" Style="{StaticResource TwitterBrowserText}"/>
+                    </StackPanel>
+                    <TextBlock x:Name="TwitterContent" TextWrapping="Wrap" Style="{StaticResource TwitterBrowserText}"
+                               FontSize="20"/>
+                </StackPanel>
+                
+            </StackPanel>
+            <GridView x:Name="TwitterLinks" ItemsSource="{Binding LinksFromTweets}"
+                      FontSize="22" Height="50" SelectionChanged="TwitterLinkSelectionChanged"
+                              />
+            <WebView x:Name="LinkWebView" LoadCompleted="LinkWebViewLoadCompleted"/>
+            <ProgressRing x:Name="LinkProgressRing" Height="90" Width="90" HorizontalAlignment="Center"
+                          VerticalAlignment="Center"/>
+        </StackPanel>
+        
+        <StackPanel x:Name="Controls" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel x:Name="NavigationButtonsStack" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,3">
+                <Button x:Name="WeatherReportButton"  Content="Mars Weather" Click="ShowWeatherReports" Height="50"
+                        />
+                <Button x:Name="TweetsButton"  Content="Tweets" Click="ShowTweets" Height="50"/>
+                <Button x:Name="StatisticsButton"  Content="Statistics" Click="ShowStatistics" Height="50"/>
+                
+            </StackPanel>
+            <ListView x:Name="ReportsList" Style="{StaticResource ListViewStyle}"
+                  ItemsSource="{Binding ReportsList}"
+                  ItemTemplate="{StaticResource ReportItemTemplate}"
+                  SelectionChanged="ReportSelectionChanged"
+                      />
+            <ListView x:Name="TweetsList" Style="{StaticResource ListViewStyle}"
+                  ItemsSource="{Binding TweetsList}"
+                  ItemTemplate="{StaticResource TweetItemTemplate}"
+                  SelectionChanged="TweetsSelectionChanged"
+                  Visibility="Collapsed"
+                  />
+
+        </StackPanel>
+
+
+        <ProgressRing x:Name="ProgressRing" Grid.Column="1" HorizontalAlignment="Center"
+                      VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+    </Grid>
+</Page>

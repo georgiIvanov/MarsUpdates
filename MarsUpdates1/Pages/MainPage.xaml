@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="MarsUpdates.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MarsUpdates.Pages"
+    xmlns:flyouts="using:MarsUpdates.Flyouts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <AppBar>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="ClearCacheButton" Style="{StaticResource AppBarButtonStyle}"
+                        AutomationProperties.Name="Clear cache"
+                        Click="ClearCacheClick"
+                        Content="&#xE176;"
+                        />
+                    <Button x:Name="JSONExportButton" Style="{StaticResource AppBarButtonStyle}"
+                        AutomationProperties.Name="JSON Export"
+                        Click="JSONExportClick"
+                        Content="&#xE127;"
+                        />
+                    <Button x:Name="XMLExportButton" Style="{StaticResource AppBarButtonStyle}"
+                        AutomationProperties.Name="XML Export"
+                        Click="XMLExportClick"
+                        Content="&#xE126;"
+                        />
+                <Button x:Name="AddRemoveTweetsBtn" Style="{StaticResource AppBarButtonStyle}"
+                        AutomationProperties.Name="Tweets"
+                        Click="TweetsClick"
+                        Content="&#xE1A8;"/>
+
+                <Button x:Name="GetReportButton" Style="{StaticResource AppBarButtonStyle}"
+                        AutomationProperties.Name="Show report"
+                        Click="RefreshReport"
+                        Content="&#xE1A2;"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+
+    <Grid x:Name="MainPageGrid" >
+        <Image x:Name="BackGroundImage" Stretch="UniformToFill"/>
+        <Frame x:Name="FeedsPage"/>
+        <flyouts:TweetsList x:Name="TweetFeedsFlyout"/>
+        <flyouts:ClearCacheFlyout x:Name="ClearCacheFlyout"/>
+        
+    </Grid>
+</Page>
